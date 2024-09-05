@@ -1,0 +1,128 @@
+Gaming
+Weighting
+cpu:0.2
+pow:0.1
+ram:0.1				ObjectiveFN ->  Hardware:0.7	Price:0.3
+ssd:0.2
+hdd:0.05
+gpu:0.35
+
+Constraints
+cpu>=i7 7:15
+pow>=p:3
+ram>=16:8
+ssd>=128:2
+gpu>=gtx1660:9
+
+
+--------------------------------------------------------------------------------------
+Coding and Development
+Weighting
+cpu:0.35
+pow:0.1
+ram:0.2				ObjectiveFN ->  Hardware:0.3	Price:0.7
+ssd:0.2
+hdd:0.05
+gpu:0.1
+
+Constraints
+cpu>=i5 8:10
+ram>=8:4
+ssd>=64:1
+
+
+
+
+--------------------------------------------------------------------------------------
+Content Creation (Video Editing, Graphic Design, etc.)
+Weighting
+cpu:0.2
+pow:0.1
+ram:0.1				ObjectiveFN ->  Hardware:0.6	Price:0.4
+ssd:0.1
+hdd:0.1
+gpu:0.4
+
+Constraints
+cpu>=i7 7:15
+ram>=16:8
+gpu>=rx6500:7
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Business and Office Work
+Weighting
+cpu:0.3
+pow:0.1
+ram:0.2				ObjectiveFN ->  Hardware:0.2	Price:0.8
+ssd:0.2
+hdd:0.1
+gpu:0.1
+
+Constraints
+cpu>=i5 6:7
+ram>=8:4
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Media Consumption (Streaming, Browsing, etc.)
+Weighting
+cpu:0.3
+pow:0.1
+ram:0.2				ObjectiveFN ->  Hardware:0.2	Price:0.8
+ssd:0.1
+hdd:0.2
+gpu:0.1
+
+Constraints
+ram>=8:4
+ssd>=1
+hdd>=1
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Student (Non-Programming)
+Weighting
+cpu:0.3
+pow:0.2
+ram:0.1				ObjectiveFN ->  Hardware:0.2	Price:0.8
+ssd:0.1
+hdd:0.2
+gpu:0.1
+
+Constraints
+Null
+
+
+
+--------------------------------------------------------------------------------------
+Other(Optimize based on price)
+Weighting
+cpu:1/6
+pow:1/6
+ram:1/6				ObjectiveFN ->  Hardware:0.5	Price:0.5
+ssd:1/6
+hdd:1/6
+gpu:1/6
+
+Constraints
+Null

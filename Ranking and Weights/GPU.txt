@@ -1,0 +1,28 @@
+Rank 1: integrated
+Rank 2: mx
+Rank 3: GTX 1050 (Score = 31%)
+Rank 4: RX 560 (Score = 33%)
+Rank 5: RX 640 (Score = 40%)
+Rank 6: GTX 1650 (Score = 42%)
+Rank 7: RX 6500 (Score = 48%)
+Rank 8: RTX 2050 (Score = 51%)
+Rank 9: GTX 1660 (Score = 58%)
+Rank 10: RTX 3050 (Score = 60%)
+Rank 11: RX 6600 (Score = 68%)
+Rank 12: RTX 2060 (Score = 68%)
+Rank 13: RTX 4050 (Score = 75%)
+Rank 14: RTX 2070 (Score = 81%)
+Rank 15: RTX 3060 (Score = 82%)
+Rank 16: RTX 2080 (Score = 89%)
+Rank 17: RX 6700 (Score = 90%)
+Rank 18: RTX 4060 (Score = 95%)
+Rank 19: RTX 3070 (Score = 110%)
+Rank 20: RTX 4070 (Score = 120%)
+Rank 21: RTX 3080 (Score = 140%)
+Rank 22: RTX 4080 (Score = 155%)
+Rank 23: RTX 4090 (Score = 195%)
+
+
+
+
+For Prices Normalization = Price/10000
