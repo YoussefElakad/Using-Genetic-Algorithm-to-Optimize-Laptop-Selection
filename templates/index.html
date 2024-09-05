@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Finder</title>
+    <style>
+        /* General Styles */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url(https://cdn.create.vista.com/api/media/medium/50665975/stock-photo-dollar-banknote-on-keyboard?token=);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+           
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.693);
+            position: relative;
+            max-width: 100%;
+            width: 50%;
+            padding:2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 5rem rgb(22, 19, 19);
+        }
+        .container form{
+            margin-top: 2rem;
+        }
+        h1, p {
+            text-align: center;
+            margin: 0 0 1.5rem 0;
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: white;
+        }
+        p {
+            color: white;
+            line-height: 1.5;
+         
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: white;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group button {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: black;
+            outline: none;
+            border: none;
+        }
+        .form-group button {
+            background-color: black;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: black;
+          outline: none;
+            border: none;
+            color: #fff;
+        }
+
+        /* Button Group Styles */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .button-group button {
+            flex: 1 1 calc(50% - 0.5rem);
+            padding: 0.75rem;
+            background-color: #f8f9fa;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: center;
+        }
+        .button-group button.selected {
+            background-color: black;
+            color: #fff;
+            border: none;
+            
+        }
+        .form-group .sd{
+           position: absolute;
+           right: 22.6rem;
+           top: 13.7rem;
+        }
+        .form-group .fd{
+           position: absolute;
+           right: 22.6rem;
+           top: 15.3rem;
+        }
+        .form-group .mg-b{
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find the Perfect Laptop for You</h1>
+        <p>This system will optimize your laptop decision based on your needs. Just tell us what you need your laptop for, how much you are willing to pay, and let the professionals do the work!</p>
+        
+        <form id="laptopForm" method="POST" action="/find-laptops">
+            <div class="form-group">
+                <label class="mg-b" for="selectionType">Do you want to:</label>
+                <div>
+                    <label >
+                        Get the optimal existing laptop
+                        <input class="sd" type="radio" id="database"  name="selectionType" value="database" checked>
+                    </label>
+                    
+                </div>
+                <div>
+                    <label>
+                        Customize a better laptop (Will take a few moments)
+                        <input class="fd" type="radio" id="customize" name="selectionType" value="customize">
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="budget">What's your budget?</label>
+                <input type="number" min="4600" id="budget" name="budget" placeholder="minmum, 4600 EGP" required>
+            </div>
+            
+            <div class="form-group">
+                <label>What will you use your laptop for?</label>
+                <div class="button-group">
+                    <button type="button" data-value="gaming">Gaming</button>
+                    <button type="button" data-value="coding">Coding and Development</button>
+                    <button type="button" data-value="content">Content Creation (Video Editing, Graphic Design, etc.)</button>
+                    <button type="button" data-value="office">Business and Office Work</button>
+                    <button type="button" data-value="media">Media Consumption (Streaming, Browsing, etc.)</button>
+                    <button type="button" data-value="student">Student (Non-Programming)</button>
+                    <button type="button" data-value="other">Other (Optimize based on price)</button>
+                </div>
+                <input type="hidden" id="usage" name="usage" required>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit">Find Laptops</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.button-group button');
+            const usageInput = document.getElementById('usage');
+            const form = document.getElementById('laptopForm');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    buttons.forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    usageInput.value = button.getAttribute('data-value');
+                });
+            });
+
+            form.addEventListener('submit', function (e) {
+                if (!usageInput.value) {
+                    e.preventDefault();
+                    alert('Please select what you will use your laptop for.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
